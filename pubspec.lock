@@ -64,6 +64,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  division:
+    dependency: "direct main"
+    description:
+      name: division
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.8"
   fake_async:
     dependency: transitive
     description:

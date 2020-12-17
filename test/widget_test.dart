@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:baca_manga_initial/main.dart';
+import 'file:///D:/Development/Android%20Development/Flutter_project/baca_manga/lib/ui/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
