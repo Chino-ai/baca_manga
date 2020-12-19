@@ -1,5 +1,6 @@
 import 'package:baca_manga_initial/style/custom_style.dart';
 import 'package:baca_manga_initial/ui/Button/custom_button.dart';
+import 'package:baca_manga_initial/ui/daftar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -83,7 +84,12 @@ class _MasukState extends State<Masuk> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("Tidak Punya Akun?" ,style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold,color: Colors.black),),
-                        Text("Daftar" ,style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold,color: Colors.black),),
+                        GestureDetector(
+                          onTap: (){
+                            Get.to(Daftar());
+                          },
+                            child: Text("Daftar" ,style: GoogleFonts.poppins(fontSize: 10, fontWeight: FontWeight.bold,color: Colors.black),)
+                        ),
                       ],
                     ),
                   ],
