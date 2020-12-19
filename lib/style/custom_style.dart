@@ -9,6 +9,7 @@ abstract class CustomStyle{
   ..bold()
   ..textColor(Colors.black);
 
+
   static ParentStyle buttonStyle = ParentStyle()
   ..width(140)
     ..height(30)
@@ -18,4 +19,6 @@ abstract class CustomStyle{
     ..elevation(5)
     ..padding(all: 20)
     ..ripple(true,splashColor: Colors.black12);
+
+
 }

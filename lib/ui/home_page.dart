@@ -1,9 +1,11 @@
-import 'Button/button_masuk.dart';
+import 'package:flutter/widgets.dart';
+
+
 import 'package:baca_manga_initial/style/custom_style.dart';
 import 'package:flutter/material.dart';
 import 'package:division/division.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:baca_manga_initial/ui/Button/button_daftar.dart';
+import 'package:baca_manga_initial/ui/Button/custom_button.dart';
  class HomePage extends StatefulWidget {
    @override
    _HomePageState createState() => _HomePageState();
@@ -48,17 +50,38 @@ import 'package:baca_manga_initial/ui/Button/button_daftar.dart';
                 ),
 
                 ),
+
+
                SizedBox(height: 140,),
 
-               ButtonMasuk(
-                  CustomStyle.buttonStyle
+
+                     GestureDetector(
+                       onTap: (){
+
+                         setState(() {
+                           print("print1");
+                         });
+                         },
+
+
+                       child: ButtonMasuk(
+                        CustomStyle.buttonStyle.clone()
+                            ..padding(top: 7,)
+                            ..border(all: 2)
+
 
 
 
                ),
+
+
+
+                     ),
                SizedBox(height: 10,),
                ButtonDaftar(
-                   CustomStyle.buttonStyle,
+                   CustomStyle.buttonStyle.clone()
+                     ..padding(top: 7,)
+                     ..border(all: 2)
 
 
                ),
