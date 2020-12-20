@@ -7,9 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get.dart';
 
-void main(){
-  runApp(Daftar());
-}
+
 
 class Daftar extends StatefulWidget {
   @override
@@ -19,8 +17,7 @@ class Daftar extends StatefulWidget {
 class _DaftarState extends State<Daftar> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
           backgroundColor: Colors.blueAccent,
           body: ListView(
             children: [
@@ -110,7 +107,7 @@ class _DaftarState extends State<Daftar> {
             ),
       ],
           ),
-        ),
+
     );
 
   }

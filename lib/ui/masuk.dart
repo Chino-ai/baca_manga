@@ -11,9 +11,7 @@ import 'package:get/get.dart';
 import 'home_page.dart';
 
 
-void main(){
-  runApp(Masuk());
-}
+
 class Masuk extends StatefulWidget {
   @override
   _MasukState createState() => _MasukState();
@@ -22,8 +20,7 @@ class Masuk extends StatefulWidget {
 class _MasukState extends State<Masuk> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
           backgroundColor: Colors.red,
           body: ListView(
 
@@ -98,7 +95,7 @@ class _MasukState extends State<Masuk> {
             ),
       ],
           ),
-        ),
+
     );
 
   }
