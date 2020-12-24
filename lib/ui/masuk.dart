@@ -21,7 +21,7 @@ class _MasukState extends State<Masuk> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.redAccent,
           body: ListView(
 
             children: [
@@ -29,7 +29,7 @@ class _MasukState extends State<Masuk> {
                 alignment: Alignment.topLeft,
                   child: GestureDetector(
                     onTap:  (){
-                      Get.off(HomePage());
+                      Get.offAll(HomePage());
                     },
                     child: Container(
                       width: 50,
@@ -52,6 +52,9 @@ class _MasukState extends State<Masuk> {
                          hintStyle: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold,color: Colors.black),
                          hintText: "Email",
                            prefixIcon: Icon(Icons.email,color: Colors.black,),
+                         focusedBorder: OutlineInputBorder(
+                           borderSide: BorderSide(color: Colors.black),
+                         )
 
 
                        ),
@@ -63,6 +66,9 @@ class _MasukState extends State<Masuk> {
                     hintStyle: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold,color: Colors.black),
                     hintText: "Password",
                     prefixIcon: Icon(Icons.vpn_key,color: Colors.black,),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black),
+                      )
 
 
                   ),

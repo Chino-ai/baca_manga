@@ -25,7 +25,7 @@ class _DaftarState extends State<Daftar> {
                   alignment: Alignment.topLeft,
                   child: GestureDetector(
                     onTap: (){
-                      Get.off(HomePage());
+                      Get.offAll(HomePage());
                     },
                     child: Container(
                         width: 50,
@@ -50,7 +50,11 @@ class _DaftarState extends State<Daftar> {
                       decoration: InputDecoration(
                         hintStyle: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold,color: Colors.black),
                         hintText: "Username",
+
                         prefixIcon: Icon(Icons.person,color: Colors.black,),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          )
 
 
                       ),
@@ -62,6 +66,9 @@ class _DaftarState extends State<Daftar> {
                         hintStyle: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold,color: Colors.black),
                         hintText: "Email",
                         prefixIcon: Icon(Icons.email,color: Colors.black,),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          )
 
 
                       ),
@@ -76,6 +83,9 @@ class _DaftarState extends State<Daftar> {
                         hintStyle: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold,color: Colors.black),
                         hintText: "Password",
                         prefixIcon: Icon(Icons.vpn_key,color: Colors.black,),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          )
 
 
 
