@@ -1,5 +1,5 @@
 import 'package:baca_manga_initial/style/custom_style.dart';
-import 'package:baca_manga_initial/ui/Button/custom_button.dart';
+import 'package:baca_manga_initial/ui/widget/custom_button.dart';
 import 'package:baca_manga_initial/ui/daftar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
