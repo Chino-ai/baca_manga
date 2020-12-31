@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,8 +17,16 @@ class _BerandaState extends State<Beranda> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+
       body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.white,Color.fromRGBO(184, 197, 243, 1)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter
+          )
+        ),
+
         padding: EdgeInsets.all(20),
         
         child: ListView(
@@ -31,8 +41,8 @@ class _BerandaState extends State<Beranda> {
               Container(
                 padding: EdgeInsets.all(10),
                 child: Container(
-                  width: 288,
-                  height: 50,
+                  width: 350,
+                  height: 40,
                   child: TextField(
                     decoration: InputDecoration(
                       prefixIcon: Icon(Icons.search),
@@ -47,6 +57,7 @@ class _BerandaState extends State<Beranda> {
                   ),
                 ),
               ),
+              SizedBox(height: 20,),
 
               // Post
               Container(
@@ -55,7 +66,7 @@ class _BerandaState extends State<Beranda> {
                 height: 119,
 
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: Colors.white,
                     borderRadius: BorderRadius.circular(20)
 
                 ),

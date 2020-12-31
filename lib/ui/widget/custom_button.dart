@@ -1,3 +1,4 @@
+import 'package:baca_manga_initial/ui/bottom_navigation_bar.dart';
 import 'package:baca_manga_initial/ui/daftar.dart';
 import 'package:baca_manga_initial/ui/masuk.dart';
 import 'package:flutter/cupertino.dart';
@@ -116,7 +117,7 @@ class _ButtonmenDaftarState extends State<ButtonmenDaftar> {
 
       gesture: Gestures()
         ..onTap((){
-          print(Text("dari class"));
+          Get.to(bottomNavigasionBar());
         })
 
 
@@ -156,7 +157,7 @@ class _ButtonmemMasukState extends State<ButtonmemMasuk> {
 
       gesture: Gestures()
         ..onTap((){
-          print(Text("dari class"));
+          Get.to(bottomNavigasionBar());
         })
 
 

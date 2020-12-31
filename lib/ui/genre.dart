@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+void main(){
+  runApp(MaterialApp(home: Genre()));
+}
+
 class Genre extends StatefulWidget {
   @override
   _GenreState createState() => _GenreState();
@@ -10,8 +14,14 @@ class _GenreState extends State<Genre> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.white,Color.fromRGBO(247, 209, 209, 1)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter
+            )
+        ),
         padding: EdgeInsets.all(20),
 
         child: ListView(
@@ -42,6 +52,7 @@ class _GenreState extends State<Genre> {
                     ),
                   ),
                 ),
+                SizedBox(height: 20,),
 
 
                 // Post
@@ -51,7 +62,7 @@ class _GenreState extends State<Genre> {
                   height: 119,
 
                   decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(20)
 
                   ),
