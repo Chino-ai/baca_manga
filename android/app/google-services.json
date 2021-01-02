@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "955367679718",
+    "project_id": "baca-manga-dbb1a",
+    "storage_bucket": "baca-manga-dbb1a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:955367679718:android:d8663bba9a7582ea66bd27",
+        "android_client_info": {
+          "package_name": "com.example.baca_manga_initial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "955367679718-7ehkdt67ojhk0td63krtls60nme0skg2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrIykerwYgA7NW2Imwd17hkU10dqiVSlQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "955367679718-7ehkdt67ojhk0td63krtls60nme0skg2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
