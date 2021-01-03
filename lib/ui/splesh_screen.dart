@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'file:///D:/Development/Android%20Development/Flutter_project/baca_manga/lib/ui/home_page.dart';
+import 'package:baca_manga_initial/ui/home_page.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
