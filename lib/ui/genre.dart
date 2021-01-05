@@ -36,8 +36,8 @@ class _GenreState extends State<Genre> {
                 Container(
                   padding: EdgeInsets.all(10),
                   child: Container(
-                    width: 288,
-                    height: 50,
+                    width: 350,
+                  height: 40,
                     child: TextField(
                       decoration: InputDecoration(
                         prefixIcon: Icon(Icons.search),
