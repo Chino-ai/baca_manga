@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 
 import 'package:baca_manga_initial/style/custom_style.dart';
 import 'package:flutter/material.dart';
-import 'package:division/division.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:baca_manga_initial/ui/widget/custom_button.dart';
  class HomePage extends StatefulWidget {
