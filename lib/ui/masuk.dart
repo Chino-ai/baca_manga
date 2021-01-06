@@ -18,6 +18,8 @@ class Masuk extends StatefulWidget {
 }
 
 class _MasukState extends State<Masuk> {
+  TextEditingController emailController = new TextEditingController(text: "");
+  TextEditingController passController = new TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,8 +60,14 @@ class _MasukState extends State<Masuk> {
 
 
                        ),
+                      controller: emailController, maxLength: 20,onChanged: (value){
+                         setState(() {
+
+                         });
+                    },
 
                     ),
+                    
                 SizedBox(height: 30,),
                 TextField(
                   decoration: InputDecoration(
@@ -72,6 +80,11 @@ class _MasukState extends State<Masuk> {
 
 
                   ),
+                  controller: passController, maxLength: 20,onChanged: (value){
+                  setState(() {
+
+                  });
+                },
                 ),
                     SizedBox(height: 20,),
                    ButtonmemMasuk(
@@ -80,7 +93,7 @@ class _MasukState extends State<Masuk> {
                          ..height(48)
                            ..background.color(Colors.white)
                            ..border(color: Colors.transparent)
-                           ..padding(top: 15)
+                           ..padding(top: 15),emailController.text,passController.text
                    ),
                     SizedBox(height: 100,),
                     Row(

@@ -1,3 +1,4 @@
+import 'package:baca_manga_initial/firebase/auth_service.dart';
 import 'package:baca_manga_initial/ui/bottom_navigation_bar.dart';
 import 'package:baca_manga_initial/ui/daftar.dart';
 import 'package:baca_manga_initial/ui/masuk.dart';
@@ -88,14 +89,16 @@ class _ButtonMasukState extends State<ButtonMasuk> {
 }
 
 class ButtonmenDaftar extends StatefulWidget {
-  final ParentStyle buttonStyle;
+   ParentStyle buttonStyle;
+   String email,pass;
 
-  ButtonmenDaftar(this.buttonStyle);
+  ButtonmenDaftar(this.buttonStyle,this.email,this.pass);
   @override
   _ButtonmenDaftarState createState() => _ButtonmenDaftarState();
 }
 
 class _ButtonmenDaftarState extends State<ButtonmenDaftar> {
+  
 
   @override
   Widget build(BuildContext context) {
@@ -116,8 +119,10 @@ class _ButtonmenDaftarState extends State<ButtonmenDaftar> {
 
 
       gesture: Gestures()
-        ..onTap((){
-          Get.to(bottomNavigasionBar());
+        ..onTap(()async{
+           await AuthService.signUp(widget.email.toString(), widget.pass.toString());
+
+           Get.to(bottomNavigasionBar());
         })
 
 
@@ -129,8 +134,9 @@ class _ButtonmenDaftarState extends State<ButtonmenDaftar> {
 }
 class ButtonmemMasuk extends StatefulWidget {
   final ParentStyle buttonStyle;
+  String email,pass;
 
-  ButtonmemMasuk(this.buttonStyle);
+  ButtonmemMasuk(this.buttonStyle,this.email,this.pass);
   @override
   _ButtonmemMasukState createState() => _ButtonmemMasukState();
 }
@@ -156,8 +162,14 @@ class _ButtonmemMasukState extends State<ButtonmemMasuk> {
 
 
       gesture: Gestures()
-        ..onTap((){
-          Get.to(bottomNavigasionBar());
+        ..onTap(()async{
+          if(AuthService.auth.currentUser() !=null){
+            await AuthService.signIn(widget.email.toString(), widget.pass.toString());
+            Get.to(bottomNavigasionBar());
+          }else if(AuthService.auth.currentUser() == null){
+            print("salah");
+          }
+
         })
 
 

@@ -47,7 +47,7 @@ class _BerandaState extends State<Beranda> {
                     decoration: InputDecoration(
                       prefixIcon: Icon(Icons.search),
                       hintText: "Cari",hintStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 12),
-                      fillColor: Colors.grey,
+                      fillColor: Colors.black,
                       filled: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -57,6 +57,7 @@ class _BerandaState extends State<Beranda> {
                   ),
                 ),
               ),
+              
               SizedBox(height: 20,),
 
               // Post

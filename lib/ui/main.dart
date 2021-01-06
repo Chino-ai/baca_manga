@@ -4,6 +4,8 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
   runApp(MyApp());
+
+  
 }
 
 class MyApp extends StatelessWidget {
@@ -11,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      
       home: SplashScreen(),
     );
   }

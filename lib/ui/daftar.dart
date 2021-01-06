@@ -15,6 +15,8 @@ class Daftar extends StatefulWidget {
 }
 
 class _DaftarState extends State<Daftar> {
+  TextEditingController emailController = new TextEditingController(text: "");
+  TextEditingController passController = new TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +74,11 @@ class _DaftarState extends State<Daftar> {
 
 
                       ),
-
+                          controller: emailController, maxLength: 20 , onChanged: (value){
+                                 setState(() {
+                                   
+                                 });
+                          },
                     ),
                     SizedBox(height: 30,),
                     TextField(
@@ -90,6 +96,11 @@ class _DaftarState extends State<Daftar> {
 
 
                       ),
+                      controller: passController, maxLength: 20 , onChanged: (value){
+                                 setState(() {
+                                   
+                                 });
+                          },
                     ),
                     SizedBox(height: 20,),
                     ButtonmenDaftar(
@@ -99,6 +110,7 @@ class _DaftarState extends State<Daftar> {
                           ..background.color(Colors.white)
                           ..border(color: Colors.transparent)
                           ..padding(top: 15)
+                          ,emailController.text,passController.text
                     ),
                     SizedBox(height: 20,),
                     ButtonMasukGoogle(
