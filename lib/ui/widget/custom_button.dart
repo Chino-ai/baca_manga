@@ -1,4 +1,5 @@
 import 'package:baca_manga_initial/firebase/auth_service.dart';
+
 import 'package:baca_manga_initial/ui/bottom_navigation_bar.dart';
 import 'package:baca_manga_initial/ui/daftar.dart';
 import 'package:baca_manga_initial/ui/masuk.dart';
@@ -120,9 +121,16 @@ class _ButtonmenDaftarState extends State<ButtonmenDaftar> {
 
       gesture: Gestures()
         ..onTap(()async{
-           await AuthService.signUp(widget.email.toString(), widget.pass.toString());
+          AuthService auth = new AuthService();
 
-           Get.to(bottomNavigasionBar());
+               await auth.signUp(widget.email.toString(), widget.pass.toString());
+               if(auth.firebaseUser != null){
+                 Get.to(bottomNavigasionBar());
+               }else{
+                 print("tidak");
+               }
+
+
         })
 
 
@@ -163,11 +171,13 @@ class _ButtonmemMasukState extends State<ButtonmemMasuk> {
 
       gesture: Gestures()
         ..onTap(()async{
-          if(AuthService.auth.currentUser() !=null){
-            await AuthService.signIn(widget.email.toString(), widget.pass.toString());
+          AuthService auth = new AuthService();
+
+          await auth.signIn(widget.email.toString(), widget.pass.toString());
+          if(auth.firebaseUser != null){
             Get.to(bottomNavigasionBar());
-          }else if(AuthService.auth.currentUser() == null){
-            print("salah");
+          }else{
+            print("tidak");
           }
 
         })
