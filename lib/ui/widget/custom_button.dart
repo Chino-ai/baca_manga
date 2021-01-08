@@ -6,7 +6,7 @@ import 'package:baca_manga_initial/ui/masuk.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:division/division.dart';
-import 'package:baca_manga_initial/style/custom_style.dart';
+import 'file:///D:/Development/Android%20Development/Flutter_project/baca_manga/lib/ui/style/custom_style.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get.dart';
 
