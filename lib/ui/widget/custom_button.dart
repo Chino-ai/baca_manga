@@ -1,14 +1,22 @@
+
+
 import 'package:baca_manga_initial/firebase/auth_service.dart';
+import 'package:baca_manga_initial/firebase/database_service_user.dart';
+import 'package:baca_manga_initial/model/data_model.dart';
 
 import 'package:baca_manga_initial/ui/bottom_navigation_bar.dart';
 import 'package:baca_manga_initial/ui/daftar.dart';
 import 'package:baca_manga_initial/ui/masuk.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:division/division.dart';
 import 'file:///D:/Development/Android%20Development/Flutter_project/baca_manga/lib/ui/style/custom_style.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:baca_manga_initial/firebase/database_service_user.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -91,18 +99,24 @@ class _ButtonMasukState extends State<ButtonMasuk> {
 
 class ButtonmenDaftar extends StatefulWidget {
    ParentStyle buttonStyle;
-   String email,pass;
+   String email,pass,username;
 
-  ButtonmenDaftar(this.buttonStyle,this.email,this.pass);
+  ButtonmenDaftar(this.buttonStyle,this.email,this.pass,this.username);
   @override
   _ButtonmenDaftarState createState() => _ButtonmenDaftarState();
 }
 
 class _ButtonmenDaftarState extends State<ButtonmenDaftar> {
-  
+  AuthService auth =  AuthService();
+  FirebaseAuth autht = FirebaseAuth.instance;
+  DataModelUser dataModelUser = DataModelUser();
+  dataBaseUserService databaseUser = dataBaseUserService();
+
 
   @override
   Widget build(BuildContext context) {
+
+
     return Parent(
       child: Container(
         child: Txt(
@@ -121,10 +135,16 @@ class _ButtonmenDaftarState extends State<ButtonmenDaftar> {
 
       gesture: Gestures()
         ..onTap(()async{
-          AuthService auth = new AuthService();
+
 
                await auth.signUp(widget.email.toString(), widget.pass.toString());
                if(auth.firebaseUser != null){
+                 databaseUser.createDataUser(
+                     uid: auth.firebaseUser.uid,username: widget.username.toString(),email: widget.email.toString()
+                 , password: widget.pass.toString()
+
+                 );
+
                  Get.to(bottomNavigasionBar());
                }else{
                  print("tidak");

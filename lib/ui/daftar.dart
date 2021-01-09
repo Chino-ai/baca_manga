@@ -15,6 +15,7 @@ class Daftar extends StatefulWidget {
 }
 
 class _DaftarState extends State<Daftar> {
+  TextEditingController usernameController = new TextEditingController(text: "");
   TextEditingController emailController = new TextEditingController(text: "");
   TextEditingController passController = new TextEditingController(text: "");
   @override
@@ -60,6 +61,11 @@ class _DaftarState extends State<Daftar> {
 
 
                       ),
+                      controller: usernameController, maxLength: 20 , onChanged: (value){
+                      setState(() {
+
+                      });
+                    },
 
                     ),
                     SizedBox(height: 30,),
@@ -110,7 +116,7 @@ class _DaftarState extends State<Daftar> {
                           ..background.color(Colors.white)
                           ..border(color: Colors.transparent)
                           ..padding(top: 15)
-                          ,emailController.text,passController.text
+                          ,emailController.text,passController.text,usernameController.text
                     ),
                     SizedBox(height: 20,),
                     ButtonMasukGoogle(
