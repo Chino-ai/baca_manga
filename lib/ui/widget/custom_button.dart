@@ -2,7 +2,7 @@
 
 import 'package:baca_manga_initial/firebase/auth_service.dart';
 import 'package:baca_manga_initial/firebase/database_service_user.dart';
-import 'package:baca_manga_initial/model/data_model.dart';
+
 
 import 'package:baca_manga_initial/ui/bottom_navigation_bar.dart';
 import 'package:baca_manga_initial/ui/daftar.dart';
@@ -109,7 +109,7 @@ class ButtonmenDaftar extends StatefulWidget {
 class _ButtonmenDaftarState extends State<ButtonmenDaftar> {
   AuthService auth =  AuthService();
   FirebaseAuth autht = FirebaseAuth.instance;
-  DataModelUser dataModelUser = DataModelUser();
+
   dataBaseUserService databaseUser = dataBaseUserService();
 
 
