@@ -1,4 +1,5 @@
 import 'package:baca_manga_initial/ui/Beranda.dart';
+import 'package:baca_manga_initial/ui/upload.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,6 +14,7 @@ class bottomNavigasionBar extends StatefulWidget {
 }
 
 class _bottomNavigasionBarState extends State<bottomNavigasionBar> {
+  String filePath;
   int _selectedTabIndex = 0;
   void _onNavBarTapped(int index){
     setState(() {
@@ -22,8 +24,11 @@ class _bottomNavigasionBarState extends State<bottomNavigasionBar> {
   @override
   Widget build(BuildContext context) {
    List<dynamic> page = [
-     MaterialApp(home:Beranda() ,),
-     MaterialApp(home:Genre() ,),
+     MaterialApp(home: Beranda()),
+     MaterialApp(home: EditProfile()),
+     MaterialApp(home: Genre()),
+
+
 
    ];
      final _bottomNavBarItems = <BottomNavigationBarItem>[
@@ -32,6 +37,11 @@ class _bottomNavigasionBarState extends State<bottomNavigasionBar> {
                 title: Text("Beranda",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.bold),)
 
               ),
+       BottomNavigationBarItem(
+           icon: Icon(Icons.add_circle_outline),
+           title: Text("Beranda",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.bold),)
+
+       ),
       BottomNavigationBarItem(
           icon: Icon(Icons.select_all),
           title: Text("Genre",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.bold),)
