@@ -1,4 +1,7 @@
 import 'package:baca_manga_initial/firebase/databasePostService.dart';
+import 'package:baca_manga_initial/model/post_model.dart';
+import 'package:baca_manga_initial/provider/post_provider.dart';
+import 'package:baca_manga_initial/ui/Beranda.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart.';
 import 'package:file_picker/file_picker.dart';
@@ -18,6 +21,7 @@ class EditProfile extends StatefulWidget {
 class _EditProfile extends State<EditProfile> {
 
   TextEditingController id = new TextEditingController();
+  List<PostModel> post;
   String filePath;
 
 
@@ -53,6 +57,7 @@ class _EditProfile extends State<EditProfile> {
                     onPressed:()async{
                          File file = await getFile();
                          filePath = await dataBasePostService.uploadkomik(file);
+                         PostProvider.post.add(PostProvider(judul: id.text,filePath: filePath));
                          setState(() {
 
                          });

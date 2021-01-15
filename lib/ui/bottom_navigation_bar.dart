@@ -5,7 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 import 'genre.dart';
+void main() {
 
+  runApp(MaterialApp(home: bottomNavigasionBar()));
+
+
+}
 
 
 class bottomNavigasionBar extends StatefulWidget {

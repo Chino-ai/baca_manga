@@ -1,4 +1,4 @@
-import 'file:///D:/Development/Android%20Development/Flutter_project/baca_manga/lib/ui/style/custom_style.dart';
+import 'package:baca_manga_initial/ui/style/custom_style.dart';
 import 'package:baca_manga_initial/ui/widget/custom_button.dart';
 import 'package:baca_manga_initial/ui/home_page.dart';
 import 'package:flutter/cupertino.dart';

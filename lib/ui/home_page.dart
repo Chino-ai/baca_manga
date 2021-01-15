@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 
-import 'file:///D:/Development/Android%20Development/Flutter_project/baca_manga/lib/ui/style/custom_style.dart';
+import 'package:baca_manga_initial/ui/style/custom_style.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:baca_manga_initial/ui/widget/custom_button.dart';

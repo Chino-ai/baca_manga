@@ -20,6 +20,10 @@ class dataBasePostService {
 
   }
 
+  static Future<void> deletePost()async{
+    return await dataPost.document().get();
+  }
+
   static Future<String> uploadkomik(File filePath)async{
     String fileName = basename(filePath.path);
     StorageReference ref = FirebaseStorage.instance.ref().child(fileName);

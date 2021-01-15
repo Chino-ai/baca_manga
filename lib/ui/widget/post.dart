@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Post extends StatelessWidget{
+  String filePath;
+  String Judul;
+  Post({this.Judul,this.filePath});
   @override
   Widget build(BuildContext context) {
     return Container(
