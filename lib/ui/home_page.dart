@@ -1,6 +1,4 @@
 import 'package:flutter/widgets.dart';
-
-
 import 'package:baca_manga_initial/ui/style/custom_style.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

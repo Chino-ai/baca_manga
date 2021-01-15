@@ -8,8 +8,6 @@ class AuthService{
   FirebaseUser firebaseUser;
 
 
-
-
   Future<dynamic> signUp(String email , password)async{
       try{
         AuthResult result = await auth.createUserWithEmailAndPassword(email: email, password: password);

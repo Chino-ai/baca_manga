@@ -2,14 +2,10 @@ import 'package:baca_manga_initial/ui/Beranda.dart';
 import 'package:baca_manga_initial/ui/upload.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-
 import 'genre.dart';
+
 void main() {
-
   runApp(MaterialApp(home: bottomNavigasionBar()));
-
-
 }
 
 

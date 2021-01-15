@@ -1,7 +1,5 @@
 import 'dart:ui';
-
 import 'package:baca_manga_initial/model/post_model.dart';
-import 'package:baca_manga_initial/ui/widget/post.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
