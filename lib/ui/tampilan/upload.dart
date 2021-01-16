@@ -1,7 +1,7 @@
 import 'package:baca_manga_initial/firebase/databasePostService.dart';
 import 'package:baca_manga_initial/model/post_model.dart';
 import 'package:baca_manga_initial/provider/post_provider.dart';
-import 'package:baca_manga_initial/ui/Beranda.dart';
+import 'file:///D:/Azay%20jangan%20di%20hapus%20dulu%20UAS/baca_manga/lib/ui/tampilan/Beranda.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart.';
 import 'package:file_picker/file_picker.dart';
