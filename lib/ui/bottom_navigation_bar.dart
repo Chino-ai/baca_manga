@@ -40,7 +40,7 @@ class _bottomNavigasionBarState extends State<bottomNavigasionBar> {
        ),
        BottomNavigationBarItem(
            icon: Icon(Icons.add_circle_outline),
-           title: Text("Beranda",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.bold),)
+           title: Text("Uploud",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.bold),)
        ),
       BottomNavigationBarItem(
           icon: Icon(Icons.select_all),
