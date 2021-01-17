@@ -8,20 +8,25 @@ import 'dart:io';
 class dataBasePostService {
   static CollectionReference dataPost = Firestore.instance.collection("post");
 
-  Future<void> createDataUser({String judul,lihat,suka,baca})async{
+  static Future<void> createaDataPost({String judul,lihat,suka,image,genre,thubmnail})async{
     dataPost.document().setData({
       "judul" : judul,
       "lihat" : lihat,
+      "image" : image,
       "suka" : suka,
-      "baca" : baca
+      "genre" : genre,
+      "thubnail" :thubmnail,
+
 
     });
 
 
   }
-
-  static Future<void> deletePost()async{
+  static Future<void> getPost()async{
     return await dataPost.document().get();
+  }
+  static Future<void> deletePost()async{
+    return await dataPost.document().delete();
   }
 
   static Future<String> uploadkomik(File filePath)async{

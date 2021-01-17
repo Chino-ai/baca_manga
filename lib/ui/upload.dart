@@ -21,7 +21,8 @@ class EditProfile extends StatefulWidget {
 class _EditProfile extends State<EditProfile> {
 
   TextEditingController id = new TextEditingController();
-  List<PostModel> post;
+  TextEditingController genre = new TextEditingController();
+
   String filePath;
 
 
@@ -51,13 +52,26 @@ class _EditProfile extends State<EditProfile> {
                 },
 
                 ),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: "Genre",
+
+
+                  ),
+                  controller: genre, maxLength: 20, onChanged: (value) {
+                  setState(() {
+
+                  });
+                },
+
+                ),
 
                 FloatingActionButton(
                   child: Text("Upload"),
                     onPressed:()async{
                          File file = await getFile();
                          filePath = await dataBasePostService.uploadkomik(file);
-                         PostProvider.post.add(PostProvider(judul: id.text,filePath: filePath));
+                        dataBasePostService.createaDataPost(judul:id.text,genre: genre.text,image: filePath);
                          setState(() {
 
                          });
