@@ -20,7 +20,10 @@ class EditProfile extends StatefulWidget {
 
 class _EditProfile extends State<EditProfile> {
 
-  TextEditingController id = new TextEditingController();
+  TextEditingController judul = new TextEditingController();
+  TextEditingController genre = new TextEditingController();
+  TextEditingController uploud = new TextEditingController();
+
   List<PostModel> post;
   String filePath;
 
@@ -40,16 +43,32 @@ class _EditProfile extends State<EditProfile> {
               children: <Widget>[
                 TextField(
                   decoration: InputDecoration(
-                    labelText: "Judul",
-
-
+                    labelText: "Buat Judul",
                   ),
-                  controller: id, maxLength: 20, onChanged: (value) {
+                  controller: judul, maxLength: 20, onChanged: (value) {
                   setState(() {
-
                   });
                 },
-
+                ),
+                //
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: "Genre",
+                  ),
+                  controller: genre, maxLength: 20, onChanged: (value) {
+                  setState(() {
+                  });
+                },
+                ),
+                //
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: "Uploud File",
+                  ),
+                  controller: uploud, maxLength: 20, onChanged: (value) {
+                  setState(() {
+                  });
+                },
                 ),
 
                 FloatingActionButton(
@@ -57,7 +76,7 @@ class _EditProfile extends State<EditProfile> {
                     onPressed:()async{
                          File file = await getFile();
                          filePath = await dataBasePostService.uploadkomik(file);
-                         PostProvider.post.add(PostProvider(judul: id.text,filePath: filePath));
+                         PostProvider.post.add(PostProvider(judul: uploud.text,filePath: filePath));
                          setState(() {
 
                          });
