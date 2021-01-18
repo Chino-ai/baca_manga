@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:baca_manga_initial/ui/home_page.dart';
 import 'package:get/get_core/src/get_main.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_plugin_pdf_viewer/flutter_plugin_pdf_viewer.dart';
+/*import 'package:flutter_plugin_pdf_viewer/flutter_plugin_pdf_viewer.dart';*/
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class PdfViewer extends StatefulWidget {
   String PdfPath;
@@ -9,12 +10,13 @@ class PdfViewer extends StatefulWidget {
 }
 
 class _PdfViewerState extends State<PdfViewer> {
-  String url = "http://www.pdf995.com/samples/pdf.pdf";
-  String pdfasset = "assets/sample.pdf";
-  PDFDocument _doc;
+  /*String url = "http://www.pdf995.com/samples/pdf.pdf";
+  String pdfasset = "assets/sample.pdf";*/
+  /*PDFDocument _doc;*/
+  SfPdfViewer _sfPdfViewer;
   bool _loading;
 
-  @override
+  /*@override
   void initState() {
     super.initState();
     _initPdf();
@@ -24,22 +26,17 @@ class _PdfViewerState extends State<PdfViewer> {
     setState(() {
       _loading = true;
     });
-    final doc = await PDFDocument.fromURL(widget.PdfPath.toString());
+    final doc = await SfPdfViewer.network(widget.PdfPath.toString());
     setState(() {
-      _doc = doc;
+      _sfPdfViewer = doc;
       _loading = false;
     });
-  }
+  }*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
 
-      body: _loading ? Center(child: CircularProgressIndicator(),) : PDFViewer(
-        document: _doc,
-        indicatorBackground: Colors.red,
-        // showIndicator: false,
-        // showPicker: false,
-      ),
+      body: SfPdfViewer.network(widget.PdfPath.toString())
     );
   }
 }

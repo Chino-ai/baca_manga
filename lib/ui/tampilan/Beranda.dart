@@ -1,9 +1,11 @@
 import 'dart:ui';
-
 import 'package:baca_manga_initial/model/post_model.dart';
+
 import 'package:baca_manga_initial/ui/pdf_viewer.dart';
-import 'package:baca_manga_initial/ui/widget/post.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -85,6 +87,7 @@ PostModel postModel = PostModel();
                         Get.to(PdfViewer(listpost[index].image));
                       },
                       child: Container(
+                        margin: EdgeInsets.all(10),
                         padding: EdgeInsets.all(10),
                         width: 360,
                         height: 119,

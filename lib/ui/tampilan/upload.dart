@@ -1,7 +1,7 @@
 import 'package:baca_manga_initial/firebase/databasePostService.dart';
 import 'package:baca_manga_initial/model/post_model.dart';
 import 'package:baca_manga_initial/provider/post_provider.dart';
-import 'package:baca_manga_initial/ui/Beranda.dart';
+import 'package:baca_manga_initial/ui/tampilan/Beranda.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart.';
 import 'package:file_picker/file_picker.dart';
@@ -20,10 +20,17 @@ class EditProfile extends StatefulWidget {
 
 class _EditProfile extends State<EditProfile> {
 
+
   TextEditingController id = new TextEditingController();
   TextEditingController genre = new TextEditingController();
 
-  String filePath;
+
+  TextEditingController judul = new TextEditingController();
+
+  TextEditingController uploud = new TextEditingController();
+String filePath;
+
+
 
 
 
@@ -41,20 +48,36 @@ class _EditProfile extends State<EditProfile> {
               children: <Widget>[
                 TextField(
                   decoration: InputDecoration(
-                    labelText: "Judul",
-
-
+                    labelText: "Buat Judul",
                   ),
-                  controller: id, maxLength: 20, onChanged: (value) {
+                  controller: judul, maxLength: 20, onChanged: (value) {
                   setState(() {
-
                   });
                 },
-
                 ),
+                //
                 TextField(
                   decoration: InputDecoration(
                     labelText: "Genre",
+                  ),
+                  controller: genre, maxLength: 20, onChanged: (value) {
+                  setState(() {
+                  });
+                },
+                ),
+                //
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: "Uploud File",
+                  ),
+                  controller: uploud, maxLength: 20, onChanged: (value) {
+                  setState(() {
+                  });
+                },
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: "thubmnail",
 
 
                   ),
@@ -71,7 +94,11 @@ class _EditProfile extends State<EditProfile> {
                     onPressed:()async{
                          File file = await getFile();
                          filePath = await dataBasePostService.uploadkomik(file);
+
                         dataBasePostService.createaDataPost(judul:id.text,genre: genre.text,image: filePath);
+
+
+
                          setState(() {
 
                          });

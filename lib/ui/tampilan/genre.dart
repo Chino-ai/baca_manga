@@ -72,6 +72,7 @@ class _GenreState extends State<Genre> {
                       Get.to(PdfViewer(listpost[index].image));
                     },
                     child: Container(
+                      margin: EdgeInsets.all(10),
                       padding: EdgeInsets.all(10),
                       width: 360,
                       height: 119,

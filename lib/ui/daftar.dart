@@ -18,6 +18,7 @@ class _DaftarState extends State<Daftar> {
   TextEditingController usernameController = new TextEditingController(text: "");
   TextEditingController emailController = new TextEditingController(text: "");
   TextEditingController passController = new TextEditingController(text: "");
+  bool _showPassword = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,25 +89,29 @@ class _DaftarState extends State<Daftar> {
                     ),
                     SizedBox(height: 30,),
                     TextField(
+                      obscureText: !this._showPassword,
                       decoration: InputDecoration(
-                        focusColor: Colors.black,
-
-
-                        hintStyle: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold,color: Colors.black),
-                        hintText: "Password",
-                        prefixIcon: Icon(Icons.vpn_key,color: Colors.black,),
+                          hintStyle: GoogleFonts.poppins(fontSize: 13, fontWeight: FontWeight.bold,color: Colors.black),
+                          hintText: "Password",
+                          prefixIcon: Icon(Icons.lock,color: Colors.black,),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              Icons.remove_red_eye,
+                              color: this._showPassword ? Colors.white : Colors.black,
+                            ),
+                            onPressed: () {
+                              setState(() => this._showPassword = !this._showPassword);
+                            },
+                          ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.black),
                           )
-
-
-
                       ),
-                      controller: passController, maxLength: 20 , onChanged: (value){
-                                 setState(() {
-                                   
-                                 });
-                          },
+                      controller: passController, maxLength: 20,onChanged: (value){
+                      setState(() {
+                      });
+
+                    },
                     ),
                     SizedBox(height: 20,),
                     ButtonmenDaftar(

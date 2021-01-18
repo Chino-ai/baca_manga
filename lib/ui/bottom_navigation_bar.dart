@@ -1,15 +1,12 @@
-import 'package:baca_manga_initial/ui/Beranda.dart';
-import 'package:baca_manga_initial/ui/upload.dart';
+import 'package:baca_manga_initial/ui/tampilan/Beranda.dart';
+import 'package:baca_manga_initial/ui/tampilan/upload.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'tampilan/genre.dart';
+import 'tampilan/more.dart';
 
-
-import 'genre.dart';
 void main() {
-
   runApp(MaterialApp(home: bottomNavigasionBar()));
-
-
 }
 
 
@@ -32,31 +29,28 @@ class _bottomNavigasionBarState extends State<bottomNavigasionBar> {
      MaterialApp(home: Beranda()),
      MaterialApp(home: EditProfile()),
      MaterialApp(home: Genre()),
-
+     MaterialApp(home: More()),
 
 
    ];
      final _bottomNavBarItems = <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                title: Text("Beranda",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.bold),)
-
-              ),
+       BottomNavigationBarItem(
+           icon: Icon(Icons.home),
+           title: Text("Beranda",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.bold),)
+       ),
        BottomNavigationBarItem(
            icon: Icon(Icons.add_circle_outline),
-           title: Text("Beranda",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.bold),)
-
+           title: Text("Uploud",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.bold),)
        ),
       BottomNavigationBarItem(
           icon: Icon(Icons.select_all),
           title: Text("Genre",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.bold),)
-
       ),
-     /* BottomNavigationBarItem(
-          icon: Icon(Icons.account_circle_rounded),
-          title: Text("Akun",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.bold),)
+       BottomNavigationBarItem(
+           icon: Icon(Icons.more_horiz),
+           title: Text("More",style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.bold),)
+       ),
 
-      ),*/
     ];
 
     final _BottomNavBar = BottomNavigationBar(
