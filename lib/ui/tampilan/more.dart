@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:baca_manga_initial/ui/profil_menu.dart';
 import 'package:baca_manga_initial/ui/widget/profile_format.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../edit_akun.dart';
 
 
 void main() {
@@ -20,7 +21,12 @@ class More extends StatelessWidget {
           ProfileMenu(
             text: "My Account",
             icon: "assets/icons/User Icon.svg",
-            press: () => {},
+            press: () => {
+              Navigator
+              .push(context,
+                MaterialPageRoute(builder: (context) => EditAkun()
+              )),
+            },
           ),
           ProfileMenu(
             text: "Notifications",
