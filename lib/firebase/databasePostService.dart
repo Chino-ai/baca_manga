@@ -15,7 +15,7 @@ class dataBasePostService {
       "image" : image,
       "suka" : suka,
       "genre" : genre,
-      "thubnail" :thubmnail,
+      "thubmnail" :thubmnail,
 
 
     });
@@ -34,6 +34,7 @@ class dataBasePostService {
     StorageReference ref = FirebaseStorage.instance.ref().child(fileName);
     StorageUploadTask task = ref.putFile(filePath);
     StorageTaskSnapshot snapshot = await task.onComplete;
+
 
     return await snapshot.ref.getDownloadURL();
   }

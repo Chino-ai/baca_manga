@@ -103,8 +103,8 @@ PostModel postModel = PostModel();
                               width: 109,
                               height: 120,
                               decoration: BoxDecoration(
-                                  image: DecorationImage(image: AssetImage(
-                                      "assets/background.jpg"),
+                                  image: DecorationImage(image: NetworkImage(
+                                      listpost[index].thubmnail),
                                       fit: BoxFit.cover),
                                   borderRadius: BorderRadius.circular(10)
                               ),

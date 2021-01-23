@@ -3,7 +3,7 @@
 import 'package:baca_manga_initial/firebase/auth_service.dart';
 import 'package:baca_manga_initial/firebase/database_service_user.dart';
 
-
+import 'package:google_fonts/google_fonts.dart';
 import 'package:baca_manga_initial/ui/bottom_navigation_bar.dart';
 import 'package:baca_manga_initial/ui/daftar.dart';
 import 'package:baca_manga_initial/ui/masuk.dart';
@@ -147,7 +147,22 @@ class _ButtonmenDaftarState extends State<ButtonmenDaftar> {
 
                  Get.to(bottomNavigasionBar());
                }else{
-                 print("tidak");
+                 AlertDialog alertDialog = new AlertDialog(
+
+                   content: new Text("Email , Password atau Username Salah atau tidak di isi",
+                     style: GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15),),
+                   actions: [
+                     FlatButton(
+                         onPressed: () {
+                           Get.back();
+                         },
+                         child: Text("Kembali" ,style: GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold),)
+                     ),
+                   ],
+                 );
+                 showDialog(context: context,
+                     child: alertDialog,
+                     barrierDismissible: true);
                }
 
 
@@ -197,7 +212,22 @@ class _ButtonmemMasukState extends State<ButtonmemMasuk> {
           if(auth.firebaseUser != null){
             Get.to(bottomNavigasionBar());
           }else{
-            print("tidak");
+            AlertDialog alertDialog = new AlertDialog(
+
+              content: new Text("Email atau Password Salah",
+                style: GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15),),
+              actions: [
+                FlatButton(
+                    onPressed: () {
+                      Get.back();
+                    },
+                    child: Text("Kembali" ,style: GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold),)
+                ),
+              ],
+            );
+            showDialog(context: context,
+                child: alertDialog,
+                barrierDismissible: true);
           }
 
         })

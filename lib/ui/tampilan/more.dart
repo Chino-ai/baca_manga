@@ -1,8 +1,14 @@
+import 'package:baca_manga_initial/firebase/auth_service.dart';
+import 'package:baca_manga_initial/ui/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:baca_manga_initial/ui/profil_menu.dart';
 import 'package:baca_manga_initial/ui/widget/profile_format.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../edit_akun.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 
 void main() {
@@ -22,10 +28,7 @@ class More extends StatelessWidget {
             text: "My Account",
             icon: "assets/icons/User Icon.svg",
             press: () => {
-              Navigator
-              .push(context,
-                MaterialPageRoute(builder: (context) => EditAkun()
-              )),
+              Get.to(EditAkun())
             },
           ),
           ProfileMenu(
@@ -46,7 +49,37 @@ class More extends StatelessWidget {
           ProfileMenu(
             text: "Log Out",
             icon: "assets/icons/Log out.svg",
-            press: () {},
+            press: () {
+              AuthService auth = new AuthService();
+              AlertDialog alertDialog = new AlertDialog(
+                title: Text("Log Out",style:GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold) ,),
+                content: new Text("Apakah anda ingin Logout",
+                  style: GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 15),),
+                actions: [
+                  FlatButton(
+                      onPressed: () {
+                        AuthService.signOut();
+                        if(auth.firebaseUser==null){
+                          Get.offAll(HomePage());
+                        }
+                      },
+                      child: Text("Yes" ,style: GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold),)
+                  ),
+                  FlatButton(
+                      onPressed: () {
+                       Get.back();
+
+                      },
+                      child: Text("No" ,style: GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold),)
+                  ),
+                ],
+              );
+              showDialog(context: context,
+                  child: alertDialog,
+                  barrierDismissible: true);
+
+
+            },
           ),
         ],
       ),

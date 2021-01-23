@@ -28,7 +28,11 @@ class _EditProfile extends State<EditProfile> {
   TextEditingController judul = new TextEditingController();
 
   TextEditingController uploud = new TextEditingController();
-String filePath;
+  TextEditingController thumbnailControl = new TextEditingController();
+String filePath1,filePath2;
+File fileThubmnail,fileKomik;
+  String thumbnail,uploadFile;
+
 
 
 
@@ -66,36 +70,70 @@ String filePath;
                 },
                 ),
                 //
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: "Uploud File",
-                  ),
-                  controller: uploud, maxLength: 20, onChanged: (value) {
-                  setState(() {
-                  });
-                },
+                Row(
+                  children: [
+                    Container(
+                      width: 200,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: (uploadFile!=null)? uploadFile.toString() : "Upload Komik",
+                        ),
+                        controller: uploud, maxLength: 20, onChanged: (value) {
+                        setState(() {
+                        });
+                      },
+                      ),
+                    ),
+                    SizedBox(width: 5,),
+                    RaisedButton(onPressed: ()async{
+                      fileKomik = await getFile();
+                      uploadFile = fileKomik.toString();
+                      setState(() {
+
+                      });
+
+                    })
+                  ],
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    labelText: "thubmnail",
+                Row(
+                  children: [
+                    Container(
+                      width: 200,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: (thumbnail!=null)? thumbnail.toString() : "Thumbnail",
 
 
-                  ),
-                  controller: genre, maxLength: 20, onChanged: (value) {
-                  setState(() {
+                        ),
+                        controller: thumbnailControl, maxLength: 20, onChanged: (value) {
+                        setState(() {
 
-                  });
-                },
+                        });
+                      },
 
+                      ),
+                    ),
+                    SizedBox(width: 5,),
+                    RaisedButton(onPressed: ()async{
+                      fileThubmnail = await getFile();
+                      thumbnail = fileThubmnail.toString();
+                      setState(() {
+
+                      });
+
+                    })
+                  ],
                 ),
 
                 FloatingActionButton(
                   child: Text("Upload"),
                     onPressed:()async{
-                         File file = await getFile();
-                         filePath = await dataBasePostService.uploadkomik(file);
 
-                        dataBasePostService.createaDataPost(judul:id.text,genre: genre.text,image: filePath);
+                         filePath1 = await dataBasePostService.uploadkomik(fileKomik);
+                         filePath2 = await dataBasePostService.uploadkomik(fileThubmnail);
+
+
+                        dataBasePostService.createaDataPost(judul:judul.text,genre: genre.text,image: filePath1,thubmnail:filePath2 );
 
 
 

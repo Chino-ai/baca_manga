@@ -88,8 +88,8 @@ class _GenreState extends State<Genre> {
                             width: 109,
                             height: 120,
                             decoration: BoxDecoration(
-                                image: DecorationImage(image: AssetImage(
-                                    "assets/background.jpg"),
+                                image: DecorationImage(image: NetworkImage(
+                                    listpost[index].thubmnail),
                                     fit: BoxFit.cover),
                                 borderRadius: BorderRadius.circular(10)
                             ),
@@ -101,6 +101,10 @@ class _GenreState extends State<Genre> {
                                   .spaceAround,
                               children: [
                                 Text(listpost[index].judul, style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 12),),
+                                SizedBox(width: 10,),
+                                Text("Genre: "+ listpost[index].genre, style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 12),),
                                 Row(

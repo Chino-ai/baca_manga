@@ -7,6 +7,7 @@ class PostModel {
   final String lihat;
 
   final String genre;
+  final String thubmnail;
 
   PostModel({
     this.judul,
@@ -14,6 +15,7 @@ class PostModel {
     this.suka,
     this.lihat,
     this.genre,
+    this.thubmnail,
 
   });
 
@@ -24,6 +26,7 @@ class PostModel {
       suka: json['suka'],
       lihat: json['lihat'],
       genre: json['genre'],
+        thubmnail: json['thubmnail']
 
     );
   }
@@ -34,6 +37,7 @@ class PostModel {
     'suka': suka,
     'lihat': lihat,
     'genre': genre,
+    'thubmnail' : thubmnail
 
   };
 
@@ -44,6 +48,7 @@ class PostModel {
       suka: doc['suka'],
       lihat: doc['lihat'],
       genre: doc['genre'],
+      thubmnail:doc['thubmnail'],
     );
   }
 }
