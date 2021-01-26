@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 void main() => runApp(EditAkun());
-
 class EditAkun extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
