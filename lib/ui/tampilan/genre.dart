@@ -1,3 +1,4 @@
+import 'package:baca_manga_initial/model/data_genre.dart';
 import 'package:baca_manga_initial/model/post_model.dart';
 import 'package:baca_manga_initial/ui/pdf_viewer.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ class Genre extends StatefulWidget {
 }
 
 class _GenreState extends State<Genre> {
-
+  Color color;
   @override
   Widget build(BuildContext context) {
     List<PostModel> listpost = Provider.of<List<PostModel>>(context);
@@ -33,11 +34,7 @@ class _GenreState extends State<Genre> {
 
         child: Column(
           children: [
-            Align(
-                alignment: Alignment.topCenter,
-                child: Text("Genre" ,style: GoogleFonts.poppins(fontWeight: FontWeight.bold,fontSize: 18),)
-            ),
-            SizedBox(height: 20,),
+
             Container(
               padding: EdgeInsets.all(10),
               child: Container(
@@ -58,6 +55,27 @@ class _GenreState extends State<Genre> {
               ),
             ),
             SizedBox(height: 20,),
+            Container(
+              height: 44.0,
+
+
+              child: ListView.builder(
+                physics: ClampingScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemCount: DataGenre.genre.length ,
+                itemBuilder: (context,int index){
+                  return GestureDetector(
+
+                    
+                      child: Text(DataGenre.genre[index]+"      ",style: GoogleFonts.poppins(fontSize: 12, ),)
+                  );
+                },
+
+
+
+              ),
+            ),
+
 
 
             // Post

@@ -1,5 +1,7 @@
 import 'dart:ui';
+import 'package:baca_manga_initial/model/data_genre.dart';
 import 'package:baca_manga_initial/model/post_model.dart';
+import 'package:baca_manga_initial/model/data_genre.dart';
 
 import 'package:baca_manga_initial/ui/pdf_viewer.dart';
 
@@ -7,6 +9,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -24,7 +27,18 @@ class Beranda extends StatefulWidget {
 }
 
 class _BerandaState extends State<Beranda> {
-PostModel postModel = PostModel();
+  List<dynamic> genre = [
+    "Romantis",
+    "Fantasy",
+    "Petualangan",
+    "TEEN",
+    "KOMEDI",
+    "SCI-FI",
+    "SUPERNATURAL",
+    "MISTERI",
+    "HORROR",
+
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +58,7 @@ PostModel postModel = PostModel();
 
         child: Column(
         children: [
-          Align(
-            alignment: Alignment.topCenter,
-              child: Text("Beranda" ,style: GoogleFonts.poppins(fontWeight: FontWeight.bold,fontSize: 18),)
-          ),
+
           SizedBox(height: 20,),
           Container(
             padding: EdgeInsets.all(10),
@@ -70,6 +81,12 @@ PostModel postModel = PostModel();
           ),
 
           SizedBox(height: 20,),
+
+
+
+
+
+
 
           // Post
 
