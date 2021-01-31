@@ -1,4 +1,5 @@
 import 'package:baca_manga_initial/firebase/auth_service.dart';
+import 'package:baca_manga_initial/ui/edit_akun_setting.dart';
 import 'package:baca_manga_initial/ui/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:baca_manga_initial/ui/profil_menu.dart';
@@ -37,7 +38,9 @@ class More extends StatelessWidget {
           ProfileMenu(
             text: "Settings",
             icon: "assets/icons/Settings.svg",
-            press: () {},
+            press: () => {
+              Get.to(EditAkunSettingPage())
+            },
           ),
           ProfileMenu(
             text: "Help Center",
