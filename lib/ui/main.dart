@@ -13,12 +13,21 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
+
+
+
   @override
   Widget build(BuildContext context) {
+
+    PostProvider postProvider = PostProvider();
+
     return MultiProvider(
       providers: [
         StreamProvider(create: (context) => PostProvider.fetchAll(),
-          initialData: List<PostModel>(),)
+          initialData: List<PostModel>(),),
+        StreamProvider(create: (context) => postProvider.genre(),
+          initialData: List<PostModel>(),),
 
       ],
       child: GetMaterialApp(

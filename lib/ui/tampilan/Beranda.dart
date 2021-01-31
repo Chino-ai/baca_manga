@@ -1,7 +1,7 @@
 import 'dart:ui';
-import 'package:baca_manga_initial/model/data_genre.dart';
+
 import 'package:baca_manga_initial/model/post_model.dart';
-import 'package:baca_manga_initial/model/data_genre.dart';
+
 
 import 'package:baca_manga_initial/ui/pdf_viewer.dart';
 
@@ -16,9 +16,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get.dart';
 
 
-void main(){
-  runApp(Beranda());
-}
+
 
 class Beranda extends StatefulWidget {
 
@@ -27,18 +25,7 @@ class Beranda extends StatefulWidget {
 }
 
 class _BerandaState extends State<Beranda> {
-  List<dynamic> genre = [
-    "Romantis",
-    "Fantasy",
-    "Petualangan",
-    "TEEN",
-    "KOMEDI",
-    "SCI-FI",
-    "SUPERNATURAL",
-    "MISTERI",
-    "HORROR",
 
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +88,7 @@ class _BerandaState extends State<Beranda> {
 
                     return GestureDetector(
                       onTap: (){
-                        Get.to(PdfViewer(listpost[index].image));
+                        Get.to(PdfViewer(listpost[index].image ));
                       },
                       child: Container(
                         margin: EdgeInsets.all(10),

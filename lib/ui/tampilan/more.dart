@@ -11,9 +11,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 
 
-void main() {
-  runApp(More());
-}
+
 
 class More extends StatelessWidget {
   @override

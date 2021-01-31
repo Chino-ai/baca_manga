@@ -8,9 +8,7 @@ import 'package:file_picker/file_picker.dart';
 import 'dart:io';
 
 
-void main(){
-  runApp(EditProfile());
-}
+
 
 class EditProfile extends StatefulWidget {
 
