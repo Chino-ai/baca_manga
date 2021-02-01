@@ -9,6 +9,7 @@ import '../edit_akun.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../edit_akun_notifikasi.dart';
 
 
 
@@ -24,26 +25,28 @@ class More extends StatelessWidget {
           ProfilePic(),
           SizedBox(height: 20),
           ProfileMenu(
-            text: "My Account",
+            text: "Akun",
             icon: "assets/icons/User Icon.svg",
             press: () => {
               Get.to(EditAkun())
             },
           ),
           ProfileMenu(
-            text: "Notifications",
+            text: "Notifikasi",
             icon: "assets/icons/Bell.svg",
-            press: () {},
+            press: () => {
+              Get.to(EditAkunNotifikasi())
+            },
           ),
           ProfileMenu(
-            text: "Settings",
+            text: "Pengaturan",
             icon: "assets/icons/Settings.svg",
             press: () => {
               Get.to(EditAkunSettingPage())
             },
           ),
           ProfileMenu(
-            text: "Help Center",
+            text: "Bantuan",
             icon: "assets/icons/Question mark.svg",
             press: () {},
           ),
@@ -64,14 +67,14 @@ class More extends StatelessWidget {
                           Get.offAll(HomePage());
                         }
                       },
-                      child: Text("Yes" ,style: GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold),)
+                      child: Text("Ya" ,style: GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold),)
                   ),
                   FlatButton(
                       onPressed: () {
                        Get.back();
 
                       },
-                      child: Text("No" ,style: GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold),)
+                      child: Text("Tidak" ,style: GoogleFonts.poppins(color: Colors.black,fontWeight: FontWeight.bold),)
                   ),
                 ],
               );

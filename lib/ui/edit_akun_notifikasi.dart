@@ -1,22 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class EditAkunSetting extends StatelessWidget {
+class EditAkunNotifikasi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Pengaturan')),
-      body: EditAkunSettingPage(),
+      appBar: AppBar(title: Text('Notifikasi')),
+      body: EditAkunNotifikasiPage(),
     );
   }
 }
 
-class EditAkunSettingPage extends StatefulWidget {
+class EditAkunNotifikasiPage extends StatefulWidget {
   @override
-  _EditAkunSettingPageState createState() => _EditAkunSettingPageState();
+  _EditAkunNotifikasiPageState createState() => _EditAkunNotifikasiPageState();
 }
 
-class _EditAkunSettingPageState extends State<EditAkunSettingPage> {
+class _EditAkunNotifikasiPageState extends State<EditAkunNotifikasiPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +25,7 @@ class _EditAkunSettingPageState extends State<EditAkunSettingPage> {
         child: ListView(
           children: [
             Text(
-              "Pengaturan",
+              "Notifikasi",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
             ),
             SizedBox(
@@ -34,14 +34,14 @@ class _EditAkunSettingPageState extends State<EditAkunSettingPage> {
             Row(
               children: [
                 Icon(
-                  Icons.person,
+                  Icons.add_alert,
                   color: Colors.blue,
                 ),
                 SizedBox(
                   width: 8,
                 ),
                 Text(
-                  "Nama Panggilan",
+                  "Notifikasi Layanan",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -49,25 +49,31 @@ class _EditAkunSettingPageState extends State<EditAkunSettingPage> {
             Divider(
               height: 15,
               thickness: 2,
+              color: Colors.blue,
             ),
             SizedBox(
               height: 10,
             ),
-            buildAccountOptionRow(context, "Admin"),
+            buildNotificationOptionRow("Favorit", true),
+            buildNotificationOptionRow("Update Manga", true),
+            buildNotificationOptionRow("Komentar Terbaik", true),
+            buildNotificationOptionRow("Balasan", true),
+            buildNotificationOptionRow("Reminder", true),
             SizedBox(
-              height: 40,
+              height: 50,
             ),
+
             Row(
               children: [
                 Icon(
-                  Icons.add_circle,
+                  Icons.access_alarm,
                   color: Colors.blue,
                 ),
                 SizedBox(
                   width: 8,
                 ),
                 Text(
-                  "Pilihan",
+                  "Info Terbaru",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -75,17 +81,16 @@ class _EditAkunSettingPageState extends State<EditAkunSettingPage> {
             Divider(
               height: 15,
               thickness: 2,
+              color: Colors.blue,
             ),
             SizedBox(
               height: 10,
             ),
-            buildAccountOptionRow(context, "Bahasa"),
-            buildAccountOptionRow(context, "Resolusi gambar"),
-            buildAccountOptionRow(context, "Hapus chache"),
-            buildAccountOptionRow(context, "Atur perangkat"),
-            buildAccountOptionRow(context, "Pengaturan Tema"),
+            buildNotificationOptionRow("Baru Rilis", true),
+            buildNotificationOptionRow("Pemberitahuan & Event", true),
+            buildNotificationOptionRow("Komentar Terbaik", true),
             SizedBox(
-              height: 40,
+              height: 50,
             ),
           ],
         ),

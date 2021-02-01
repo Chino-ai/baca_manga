@@ -1,10 +1,11 @@
  import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class EditAkun extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('My Account')),
+      appBar: AppBar(title: Text('Personal Informasi')),
       body: EditAkunPage(),
     );
   }
@@ -60,24 +61,22 @@ class EditAkun extends StatelessWidget {
                                ))),
                      ),
                      Positioned(
-                         bottom: 0,
-                         right: 0,
-                         child: Container(
-                           height: 40,
-                           width: 40,
-                           decoration: BoxDecoration(
-                             shape: BoxShape.circle,
-                             border: Border.all(
-                               width: 4,
-                               color: Theme.of(context).scaffoldBackgroundColor,
-                             ),
-                             color: Colors.red,
+                       right: -16,
+                       bottom: 0,
+                       child: SizedBox(
+                         height: 46,
+                         width: 46,
+                         child: FlatButton(
+                           shape: RoundedRectangleBorder(
+                             borderRadius: BorderRadius.circular(50),
+                             side: BorderSide(color: Colors.white),
                            ),
-                           child: Icon(
-                             Icons.edit,
-                             color: Colors.white,
-                           ),
-                         )),
+                           color: Color(0xFFF5F6F9),
+                           onPressed: () {},
+                           child: SvgPicture.asset("assets/icons/Camera Icon.svg"),
+                         ),
+                       ),
+                     )
                    ],
                  ),
                ),
@@ -85,7 +84,7 @@ class EditAkun extends StatelessWidget {
                  height: 35,
                ),
                buildTextField("Username", "", false),
-               buildTextField("Email", "", false),
+               buildTextField("E-mail", "", false),
                buildTextField("Password", "", true),
                SizedBox(
                  height: 35,
@@ -101,7 +100,7 @@ class EditAkun extends StatelessWidget {
                      shape: RoundedRectangleBorder(
                          borderRadius: BorderRadius.circular(20)),
                      child: Text(
-                       "Cancel",
+                       "Batal",
                        style: TextStyle(
                            fontSize: 14,
                            letterSpacing: 2.2,
@@ -116,7 +115,7 @@ class EditAkun extends StatelessWidget {
                      shape: RoundedRectangleBorder(
                          borderRadius: BorderRadius.circular(20)),
                      child: Text(
-                       "Save",
+                       "Simpan",
                        style: TextStyle(
                            fontSize: 14,
                            letterSpacing: 2.2,
