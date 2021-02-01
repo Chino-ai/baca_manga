@@ -24,10 +24,6 @@ class _EditAkunNotifikasiPageState extends State<EditAkunNotifikasiPage> {
         padding: EdgeInsets.only(left: 16, top: 25, right: 16),
         child: ListView(
           children: [
-            Text(
-              "Notifikasi",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
-            ),
             SizedBox(
               height: 40,
             ),

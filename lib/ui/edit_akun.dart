@@ -1,5 +1,9 @@
- import 'package:flutter/material.dart';
+import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:baca_manga_initial/firebase/databasePostService.dart';
+import 'package:image_picker/image_picker.dart';
+
 
 class EditAkun extends StatelessWidget {
   @override
@@ -18,6 +22,8 @@ class EditAkun extends StatelessWidget {
 
  class _EditAkunPageState extends State<EditAkunPage> {
    bool showPassword = false;
+   String imagePath;
+
    @override
    Widget build(BuildContext context) {
      return Scaffold(
@@ -29,36 +35,31 @@ class EditAkun extends StatelessWidget {
            },
            child: ListView(
              children: [
-               // Text(
-               //   "My Account",
-               //   style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
-               // ),
                SizedBox(
                  height: 15,
                ),
                Center(
-                 child: Stack(
-                   children: [
-                     Container(
+                 child: Column(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   children: <Widget>[
+                     (imagePath != null)
+                     ? Container(
                        width: 130,
                        height: 130,
                        decoration: BoxDecoration(
-                           border: Border.all(
-                               width: 4,
-                               color: Theme.of(context).scaffoldBackgroundColor),
-                           boxShadow: [
-                             BoxShadow(
-                                 spreadRadius: 2,
-                                 blurRadius: 10,
-                                 color: Colors.black.withOpacity(0.1),
-                                 offset: Offset(0, 10))
-                           ],
+                         shape: BoxShape.circle,
+                         border: Border.all(color: Colors.black),
+                         image: DecorationImage(
+                           image: NetworkImage(imagePath),
+                           fit: BoxFit.cover)),
+                 )
+                     : Container(
+                         width: 130,
+                         height: 130,
+                         decoration: BoxDecoration(
                            shape: BoxShape.circle,
-                           image: DecorationImage(
-                               fit: BoxFit.cover,
-                               image: NetworkImage(
-                                 "assets/avatar.png",
-                               ))),
+                           border: Border.all(color: Colors.black),
+                         )
                      ),
                      Positioned(
                        right: -16,
@@ -72,7 +73,13 @@ class EditAkun extends StatelessWidget {
                              side: BorderSide(color: Colors.white),
                            ),
                            color: Color(0xFFF5F6F9),
-                           onPressed: () {},
+                           onPressed: () async {
+                             File file = await getImage();
+                             imagePath = await dataBasePostService.uploudimage(file);
+
+                             setState(() {
+                             });
+                           },
                            child: SvgPicture.asset("assets/icons/Camera Icon.svg"),
                          ),
                        ),
@@ -163,4 +170,9 @@ class EditAkun extends StatelessWidget {
        ),
      );
    }
+ }
+
+ Future<File> getImage() async{
+  // ignore: deprecated_member_use
+  return await ImagePicker.pickImage(source: ImageSource.gallery);
  }

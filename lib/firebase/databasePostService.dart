@@ -16,8 +16,6 @@ class dataBasePostService {
       "suka" : suka,
       "genre" : genre,
       "thubmnail" :thubmnail,
-
-
     });
 
 
@@ -31,10 +29,19 @@ class dataBasePostService {
 
   static Future<String> uploadkomik(File filePath)async{
     String fileName = basename(filePath.path);
+
     StorageReference ref = FirebaseStorage.instance.ref().child(fileName);
     StorageUploadTask task = ref.putFile(filePath);
     StorageTaskSnapshot snapshot = await task.onComplete;
 
+    return await snapshot.ref.getDownloadURL();
+  }
+  static Future<String> uploudimage(File imageFile) async{
+    String fileName = basename(imageFile.path);
+
+    StorageReference ref = FirebaseStorage.instance.ref().child(fileName);
+    StorageUploadTask task = ref.putFile(imageFile);
+    StorageTaskSnapshot snapshot = await task.onComplete;
 
     return await snapshot.ref.getDownloadURL();
   }
