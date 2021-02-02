@@ -5,18 +5,22 @@ import 'package:baca_manga_initial/ui/tampilan/upload.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'tampilan/more.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/utils.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
-void main() {
-  runApp(MaterialApp(home: bottomNavigasionBar()));
-}
+
 
 
 class bottomNavigasionBar extends StatefulWidget {
+  final FirebaseUser user;
+  bottomNavigasionBar({this.user});
   @override
   _bottomNavigasionBarState createState() => _bottomNavigasionBarState();
 }
 
 class _bottomNavigasionBarState extends State<bottomNavigasionBar> {
+
   String filePath;
   int _selectedTabIndex = 0;
   void _onNavBarTapped(int index){

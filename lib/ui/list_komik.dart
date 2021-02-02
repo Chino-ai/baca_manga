@@ -9,60 +9,36 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 
-class tabBar extends StatefulWidget {
+class ListKomik extends StatefulWidget {
   @override
-  _tabBarState createState() => _tabBarState();
+  _ListKomikState createState() => _ListKomikState();
 }
 
-class _tabBarState extends State<tabBar> {
+class _ListKomikState extends State<ListKomik> {
 
 
   @override
   Widget build(BuildContext context) {
 
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: DefaultTabController(
-        length: choices.length,
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.redAccent,
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.redAccent,
 
-            title: Text('Genre'),
-            bottom: TabBar(
-              isScrollable: true,
-              tabs: choices.map<Widget>((Choice choice) {
-                return Tab(
-                  text: choice.title,
+        title: Text('Komik Anda'),
 
-                );
-
-              }).toList(),
-            ),
-          ),
-          body: TabBarView(
-            children: choices.map((Choice choice) {
-              return Padding(
-                padding: EdgeInsets.all(20.0),
-                child: ChoicePage(
-                  choice: choice,
-                ),
-              );
-
-            }).toList(),
-          ),
-        ),
       ),
+      body: ChoicePage()
     );
+
   }
 }
 class Choice {
   final String title;
 
- Choice({this.title});
+  Choice({this.title});
 }
 
- List<Choice> choices = <Choice>[
+List<Choice> choices = <Choice>[
   Choice(title: 'COMEDY'),
   Choice(title: 'ROMANCE'),
   Choice(title: 'ACTION'),
@@ -75,8 +51,6 @@ class Choice {
 
 
 class ChoicePage extends StatefulWidget {
-  final Choice choice;
-  ChoicePage({this.choice});
 
 
   TextEditingController genre = new TextEditingController();
@@ -89,7 +63,7 @@ class _ChoicePageState extends State<ChoicePage> {
   @override
   Widget build(BuildContext context) {
     List<PostModel> listpost = Provider.of<List<PostModel>>(context);
-    PostProvider(jenre: widget.choice.title.toString());
+
 
 
 
@@ -102,7 +76,7 @@ class _ChoicePageState extends State<ChoicePage> {
 
         return GestureDetector(
           onTap: (){
-             Get.to(PdfViewer(listpost[index].image));
+            Get.to(PdfViewer(listpost[index].image));
 
 
 
@@ -141,7 +115,7 @@ class _ChoicePageState extends State<ChoicePage> {
                           fontWeight: FontWeight.bold,
                           fontSize: 12),),
                       SizedBox(width: 10,),
-                      Text("Genre: "+widget.choice.title, style: GoogleFonts.poppins(
+                      Text("Genre: "+ listpost[index].genre, style: GoogleFonts.poppins(
                           fontWeight: FontWeight.bold,
                           fontSize: 12),),
                       Row(

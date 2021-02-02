@@ -22,7 +22,7 @@ class _DaftarState extends State<Daftar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: Color.fromRGBO(116, 174, 241, 1),
           body: ListView(
             children: [
               Align(

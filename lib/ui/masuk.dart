@@ -18,13 +18,14 @@ class Masuk extends StatefulWidget {
 }
 
 class _MasukState extends State<Masuk> {
+
   TextEditingController emailController = new TextEditingController(text: "");
   TextEditingController passController = new TextEditingController(text: "");
   bool _showPassword = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          backgroundColor: Colors.redAccent,
+          backgroundColor: Color.fromRGBO(243, 102, 107, 1),
           body: ListView(
 
             children: [

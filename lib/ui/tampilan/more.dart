@@ -1,6 +1,7 @@
 import 'package:baca_manga_initial/firebase/auth_service.dart';
 import 'package:baca_manga_initial/ui/edit_akun_setting.dart';
 import 'package:baca_manga_initial/ui/home_page.dart';
+import 'package:baca_manga_initial/ui/list_komik.dart';
 import 'package:flutter/material.dart';
 import 'package:baca_manga_initial/ui/profil_menu.dart';
 import 'package:baca_manga_initial/ui/widget/profile_format.dart';
@@ -29,6 +30,13 @@ class More extends StatelessWidget {
             icon: "assets/icons/User Icon.svg",
             press: () => {
               Get.to(EditAkun())
+            },
+          ),
+          ProfileMenu(
+            text: "Komik Anda",
+            icon: "assets/icons/Star Icon.svg",
+            press: () => {
+              Get.to(ListKomik())
             },
           ),
           ProfileMenu(

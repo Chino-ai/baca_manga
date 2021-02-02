@@ -1,7 +1,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
+
 class AuthService{
   static FirebaseAuth auth =  FirebaseAuth.instance;
   final dataUser = Firestore.instance.collection("akun");
@@ -15,9 +15,12 @@ class AuthService{
         return firebaseUser;
       }catch(e){
         print(e.toString());
-
         return null;
-      }
+        }
+
+
+
+
 
   }
 
@@ -36,11 +39,7 @@ class AuthService{
     auth.signOut();
   }
 
-
-
-
-
-
+  static Stream<FirebaseUser> get firebaseUserStream => auth.onAuthStateChanged;
 
 
 }

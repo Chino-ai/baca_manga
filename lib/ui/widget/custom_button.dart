@@ -145,7 +145,7 @@ class _ButtonmenDaftarState extends State<ButtonmenDaftar> {
 
                  );
 
-                 Get.to(bottomNavigasionBar());
+                 Get.offAll(bottomNavigasionBar());
                }else{
                  AlertDialog alertDialog = new AlertDialog(
 
@@ -210,7 +210,7 @@ class _ButtonmemMasukState extends State<ButtonmemMasuk> {
 
           await auth.signIn(widget.email.toString(), widget.pass.toString());
           if(auth.firebaseUser != null){
-            Get.to(bottomNavigasionBar());
+            Get.offAll(bottomNavigasionBar());
           }else{
             AlertDialog alertDialog = new AlertDialog(
 

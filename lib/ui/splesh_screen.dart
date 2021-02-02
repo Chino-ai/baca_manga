@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
             return HomePage();
           }
       ));*/
-      Get.off(HomePage());
+      Get.offAll(HomePage());
     });
   }
   @override
