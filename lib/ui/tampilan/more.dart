@@ -14,8 +14,6 @@ import '../edit_akun_notifikasi.dart';
 
 
 
-
-
 class More extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

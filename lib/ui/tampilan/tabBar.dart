@@ -1,6 +1,6 @@
 import 'package:baca_manga_initial/model/post_model.dart';
 import 'package:baca_manga_initial/provider/post_provider.dart';
-import 'file:///D:/Development/Android%20Development/Flutter_project/baca_manga/lib/main.dart';
+import 'package:baca_manga_initial/main.dart';
 import 'package:baca_manga_initial/ui/pdf_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
