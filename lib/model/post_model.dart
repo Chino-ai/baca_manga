@@ -5,7 +5,6 @@ class PostModel {
   final String image;
   final String suka;
   final String lihat;
-
   final String genre;
   final String thubmnail;
 

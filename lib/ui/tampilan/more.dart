@@ -32,7 +32,7 @@ class More extends StatelessWidget {
           ),
           ProfileMenu(
             text: "Komik Anda",
-            icon: "assets/icons/Star Icon.svg",
+            icon: "assets/icons/Heart Icon.svg",
             press: () => {
               Get.to(ListKomik())
             },
