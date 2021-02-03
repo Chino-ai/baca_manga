@@ -7,9 +7,7 @@ import 'package:flutter/cupertino.dart.';
 import 'package:file_picker/file_picker.dart';
 import 'dart:io';
 
-
-
-
+//maul
 class EditProfile extends StatefulWidget {
 
   @override
